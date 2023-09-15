@@ -25,7 +25,7 @@ export function Caixa() {
 
   const calculateChange = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    setLoading(true);
     try {
       const result = await getChanges(
         parseFloat(purchaseValue),
@@ -40,6 +40,7 @@ export function Caixa() {
       formRef.current?.reset();
       setExchangeResult(result.change);
       setValues(`$${moneyDelivered} para a compra de $${purchaseValue}`);
+      setLoading(false);
     } catch (error) {
       setShowAlert(true);
     }
@@ -73,7 +74,11 @@ export function Caixa() {
             inputType={"number"}
             inputPlaceholder={"Valor pago"}
           />
-          <Button buttonText={"Calcular Troco"} buttonType="submit" />
+          <Button
+            buttonText={"Calcular Troco"}
+            buttonType="submit"
+            loading={loading}
+          />
           {showAlert && (
             <ErrorAlert
               alertText={"Por favor, insira um valor válido."}

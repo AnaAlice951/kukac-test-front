@@ -12,21 +12,25 @@ export function Palindromo() {
   const [palindromes, setPalindromes] = useState<number[]>([]);
   const [hasError, setHasError] = useState(false);
   const [interval, setInterval] = useState("");
+  const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const findPalindromes = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
     const result = await getPalindromes(startNumber, endNumber);
     formRef.current?.reset();
     if (result.error) {
       setHasError(true);
       setShowResult(false);
+      setLoading(false);
       return;
     }
     setPalindromes(result.palindromes);
     setShowResult(true);
     setHasError(false);
     setInterval(`${startNumber} a ${endNumber}`);
+    setLoading(false);
   };
 
   return (
@@ -57,7 +61,11 @@ export function Palindromo() {
             inputPlaceholder={"Fim do intervalo"}
             min={0}
           />
-          <Button buttonText={"Encontrar Palíndromos"} buttonType="submit" />
+          <Button
+            buttonText={"Encontrar Palíndromos"}
+            buttonType="submit"
+            loading={loading}
+          />
           {hasError && (
             <ErrorAlert
               alertText={"Por favor, insira um intervalo válido."}

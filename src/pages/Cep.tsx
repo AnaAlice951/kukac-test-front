@@ -4,6 +4,7 @@ import Input from "../components/input/Input";
 import Button from "../components/button/Button";
 import { CepResponse, fetchCEP } from "../services/axios";
 import { toast } from "react-toastify";
+import { validateCEP } from "../utils/validateCEP";
 
 export function Cep() {
   const [firstCEP, setFirstCEP] = useState<string>("");
@@ -14,7 +15,6 @@ export function Cep() {
   const [loading, setLoading] = useState(false);
   const [cepResults, setCepResults] = useState<CepResponse[]>([]);
   const formRef = useRef<HTMLFormElement>(null);
-
   const toastId = "warning-toast";
 
   async function handleFetchCEP(event: React.FormEvent<HTMLFormElement>) {
@@ -46,20 +46,18 @@ export function Cep() {
       });
       if (result) {
         results.push(result);
-        console.log("resutado", result);
+      }
+      if (result?.erro) {
+        toast.warning(`CEP inexistente: ${cep}`, {
+          position: toast.POSITION.BOTTOM_CENTER,
+          className: "custom-toaster",
+        });
       }
     }
 
     formRef.current?.reset();
     setCepResults(results);
     setLoading(false);
-  }
-
-  function validateCEP(cep: string) {
-    if (cep.length !== 8) {
-      return false;
-    }
-    return true;
   }
 
   return (
@@ -82,6 +80,7 @@ export function Cep() {
               setValue={(value) => setFirstCEP(value)}
               inputType={"number"}
               inputPlaceholder={"1° CEP"}
+              max={99999999}
             />
             <Input
               setValue={(value) => setSecondCEP(value)}
@@ -107,7 +106,11 @@ export function Cep() {
               inputPlaceholder={"5° CEP"}
               max={99999999}
             />
-            <Button buttonType="submit" buttonText={"Ver região dos CEPS"} />
+            <Button
+              buttonType="submit"
+              buttonText={"Ver região dos CEPS"}
+              loading={loading}
+            />
           </form>
         </div>
         {cepResults.length > 0 && (

@@ -166,7 +166,6 @@ export function Garagem() {
               buttonType="submit"
               loading={loading}
             />
-            {loading}
           </form>
           <Button buttonText={"Resetar Garagem"} onClickAction={removeGarage} />
         </div>
