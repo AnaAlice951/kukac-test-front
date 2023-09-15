@@ -1,27 +1,43 @@
-# React + TypeScript + Vite
+# Kukac Test FrontEnd
+> A cool playground.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Teste técnico feito para a empresa Kukac que aprensenta 4 propostas.
+1. Palindromos: Descobrir números palíndromos entre um intervalo.
+2. Caixa: Descobrir o troco de uma compra, e quantas notas de 100, 10 e 1 podem ser retornadas.
+3. Garagem: Organizar véiculos em uma gararem, apresentados seus dados de forma organizada.
+4. CEP: Descobrir a localidade de 5 CEPs.
 
-Currently, two official plugins are available:
+![](header.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalação
 
-## Expanding the ESLint configuration
+Instale as depêdencias do projeto com o seguinte comando:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```sh
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Como rodar o frontend
+
+Rode o backend simultaneamente com o frontend com o seguinte comando:
+
+```sh
+npm run dev
+```
+
+##  Ténologias usadas
+
+Para implementação do frontend foi usado:
+
+1. Typescript
+2. Axios
+3. Vite
+4. React
+5. Tailwind
+
+
+### Utilizando o .env
+
+Para conseguir rodar esse projeto você precisa criar um arquivo .env.local, seguindo o padrão que está no arquivo .env.local.example
+
+
