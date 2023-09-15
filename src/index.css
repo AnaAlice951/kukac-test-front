@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+:root {
+  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: light dark;
+}
+
+@layer components {
+  .custom-toaster {
+    background-color: #111827;
+    color: white;
+  }
+}
