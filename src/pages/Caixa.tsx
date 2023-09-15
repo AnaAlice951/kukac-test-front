@@ -32,7 +32,7 @@ export function Caixa() {
         parseFloat(moneyDelivered)
       );
       if (result.error) {
-        setLoading(true);
+        setLoading(false);
         setShowAlert(true);
         setExchangeResult(null);
         return;
