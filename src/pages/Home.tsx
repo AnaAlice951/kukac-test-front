@@ -3,7 +3,7 @@ import Header from "../components/header/Hearder";
 
 export function Home() {
   const instagramURL = "https://www.instagram.com/anaalice951";
-  const gitHubURL = "https://www.instagram.com/anaalice951";
+  const gitHubURL = "https://github.com/AnaAlice951";
   return (
     <>
       <Header />
