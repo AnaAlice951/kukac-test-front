@@ -72,6 +72,10 @@ export function Garagem() {
       setGarageData(garageData.change);
       formRef.current?.reset();
       optionRef.current?.setAttribute("selected", "true");
+      toast.success("Veiculo adicionado à garagem!", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        className: "custom-toaster",
+      });
     } catch (error) {
       toast.warning("Algo deu errado! Por favor, tente novamente.", {
         position: toast.POSITION.BOTTOM_CENTER,
@@ -79,10 +83,6 @@ export function Garagem() {
       });
     } finally {
       setLoading(false);
-      toast.success("Veiculo adicionado à garagem!", {
-        position: toast.POSITION.BOTTOM_CENTER,
-        className: "custom-toaster",
-      });
       setVehicleType("");
     }
   };
