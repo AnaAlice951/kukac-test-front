@@ -4,7 +4,6 @@ type ButtonProps = {
   buttonText: string;
   buttonType?: "submit" | undefined;
   onClickAction?: MouseEventHandler<HTMLButtonElement> | undefined;
-  disabled?: boolean;
   loading?: boolean;
 };
 
@@ -12,7 +11,6 @@ const Button = ({
   buttonText,
   buttonType,
   onClickAction,
-  disabled = false,
   loading = false,
 }: ButtonProps) => {
   return (

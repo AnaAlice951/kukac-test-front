@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
+import { CepResponse, fetchCEP } from "../services/axios";
+import { toast } from "react-toastify";
 import Header from "../components/header/Hearder";
 import Input from "../components/input/Input";
 import Button from "../components/button/Button";
-import { CepResponse, fetchCEP } from "../services/axios";
-import { toast } from "react-toastify";
 import { validateCEP } from "../utils/validateCEP";
 
 export function Cep() {

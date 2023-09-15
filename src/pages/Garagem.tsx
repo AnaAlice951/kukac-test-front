@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Header from "../components/header/Hearder";
+import { toast } from "react-toastify";
 import {
   getGarageJson,
   removeGarageJson,
@@ -8,7 +8,7 @@ import {
 import Input from "../components/input/Input";
 import Button from "../components/button/Button";
 import Select from "../components/select/Select";
-import { toast } from "react-toastify";
+import Header from "../components/header/Hearder";
 
 type Car = {
   model: string;

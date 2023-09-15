@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import Header from "../components/header/Hearder";
 import { getPalindromes } from "../services/axios";
 import Input from "../components/input/Input";
+import Header from "../components/header/Hearder";
 import Button from "../components/button/Button";
 import ErrorAlert from "../components/error-alert/ErrorAlert";
 

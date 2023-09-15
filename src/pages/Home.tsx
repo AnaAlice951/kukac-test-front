@@ -1,6 +1,5 @@
 import { BsInstagram, BsGithub } from "react-icons/bs";
 import Header from "../components/header/Hearder";
-import kukacLogo from "../assets/programador-trabalhando.jpg";
 
 export function Home() {
   const instagramURL = "https://www.instagram.com/anaalice951";
